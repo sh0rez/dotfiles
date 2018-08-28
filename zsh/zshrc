@@ -16,7 +16,7 @@ EOBUNDLES
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Theme
-antigen theme agnoster
+antigen theme gallifrey
 
 # Apply
 antigen apply

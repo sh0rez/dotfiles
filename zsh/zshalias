@@ -1,3 +1,4 @@
 # remove common-alias rm -i
 unalias rm
 
+alias less="less -FX"
