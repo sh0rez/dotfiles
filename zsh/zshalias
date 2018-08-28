@@ -1,0 +1,3 @@
+# remove common-alias rm -i
+unalias rm
+

@@ -20,6 +20,7 @@
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
     ~/.zshlazy: zsh/zshlazy
+    ~/.zshalias: zsh/zshalias
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
