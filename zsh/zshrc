@@ -1,0 +1,25 @@
+ANTIGEN_PATH=~/.dotfiles
+source $ANTIGEN_PATH/bin/antigen/antigen.zsh
+
+# oh-my-zsh
+antigen use oh-my-zsh
+
+# oh-my-zsh plugins
+antigen bundles <<EOBUNDLES
+    common-aliases
+    docker
+    gpg-agent
+    git
+EOBUNDLES
+
+# further plugins
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Theme
+antigen theme agnoster
+
+# Apply
+antigen apply
+
+# Revert rm -i from common-aliases
+unalias rm
