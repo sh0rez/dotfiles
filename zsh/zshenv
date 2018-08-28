@@ -1,16 +1,6 @@
+# Lazy loading
+source ~/.zshlazy
+
 # Golang
 export PATH=$PATH:~/go/bi
 export GOPATH=$~/go
-
-# NVM (lazy)
-nvm() {
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    nvm "$@"
-}
-
-# TheFuck (lazy):
-fuck() {
-    eval $(thefuck --alias)
-    fuck "$@"
-}
