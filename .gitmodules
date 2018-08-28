@@ -1,0 +1,6 @@
+[submodule "bin/antigen"]
+	path = bin/antigen
+	url = https://github.com/zsh-users/antigen.git
+[submodule "bin/dotbot"]
+	path = bin/dotbot
+	url = https://github.com/anishathalye/dotbot

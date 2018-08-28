@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+
+    # git
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
+
+    # input
+    ~/.inputrc: input/inputrc
+
+    # gpg
+    ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
+
+    # zsh
+    ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
