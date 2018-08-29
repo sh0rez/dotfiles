@@ -1,0 +1,63 @@
+" vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/plugins')
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'hashivim/vim-terraform'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" keybindings
+let mapleader = ","	"leader
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+" visuals 
+set relativenumber      " show relative line numbers
+set showcmd             " show command in bottom bar
+set cursorline          " highlight current line
+
+" colorscheme
+colorscheme codedark    "vscode color scheme
+
+" features
+filetype indent on      " load filetype-specific indent files
+syntax enable           " enable syntax highlighting
+
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+
+set ttyfast
+set mouse=a
+
+" search
+set ignorecase		" case insensitive
+set smartcase		" uppercase is case sensitive
+set incsearch		" move cursor to first match
+set showmatch		" show matches
+set hlsearch		" highlight
+nnoremap <leader><space> :noh<cr>
+
+" splits
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>j
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l

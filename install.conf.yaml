@@ -15,6 +15,9 @@
 
     # gpg
     ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
+    
+    # vim
+    ~/.vim:
 
     # zsh
     ~/.zshenv: zsh/zshenv
