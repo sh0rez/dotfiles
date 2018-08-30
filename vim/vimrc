@@ -6,6 +6,8 @@ call vundle#begin('~/.vim/plugins')
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'christoomey/vim-tmux-navigator'
+
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'vim-airline/vim-airline'
 
@@ -44,6 +46,7 @@ set lazyredraw          " redraw only when we need to.
 
 set ttyfast
 set mouse=a
+set ttymouse=xterm2
 
 " search
 set ignorecase		" case insensitive
@@ -56,8 +59,16 @@ nnoremap <leader><space> :noh<cr>
 " splits
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>j
+nnoremap <leader>= <C-w>=
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+set splitbelow
+set splitright
+
+" completion
+imap <C-space> <C-P>
+set wildmode=longest,list:longest

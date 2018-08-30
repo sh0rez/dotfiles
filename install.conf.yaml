@@ -16,6 +16,9 @@
     # gpg
     ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
     
+    # tmux
+    ~/.tmux.conf: tmux/tmux.conf
+    
     # vim
     ~/.vim:
 
