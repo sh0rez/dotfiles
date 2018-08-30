@@ -2,5 +2,6 @@
 source ~/.zshlazy
 
 # Golang
-export PATH=$PATH:~/go/bi
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/go/bin
 export GOPATH=$~/go
