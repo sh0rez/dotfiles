@@ -9,11 +9,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Appearance
-Plugin 'tomasiser/vim-code-dark'
 Plugin 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_powerline_fonts = 1
+Plugin 'morhetz/gruvbox'
 
 " Editor Features
 Plugin 'tpope/vim-commentary'
@@ -41,11 +41,14 @@ nnoremap k gk
 
 " visuals 
 set relativenumber      " show relative line numbers
+set number
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 
 " colorscheme
-colorscheme codedark
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
 
 " features
 filetype indent on      " load filetype-specific indent files
