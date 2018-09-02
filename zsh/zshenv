@@ -4,4 +4,7 @@ source ~/.zshlazy
 # Golang
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
-export GOPATH=$~/go
+export GOPATH=~/go
+
+# User Bin
+export PATH=$PATH:~/bin
