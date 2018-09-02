@@ -15,12 +15,17 @@ antigen bundles <<EOBUNDLES
     common-aliases
     docker
     gpg-agent
+    golang
     git
     tmux
 EOBUNDLES
 
 # further plugins
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundles <<EOBUNDLES
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-completions
+    zsh-users/zsh-autosuggestions
+EOBUNDLES
 
 # Theme
 antigen theme gallifrey
