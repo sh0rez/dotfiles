@@ -15,10 +15,12 @@
 
     # gpg
     ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
-    
+
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
-    
+    ~/.tmux.linux.conf: tmux/tmux.linux.conf
+    ~/.tmux.darwin.conf: tmux/tmux.darwin.conf
+
     # vim
     ~/.vim:
 
