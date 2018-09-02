@@ -7,3 +7,6 @@
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "nvim/autoload/vim-plug"]
+	path = nvim/autoload/vim-plug
+	url = https://github.com/junegunn/vim-plug
