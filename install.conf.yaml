@@ -22,6 +22,10 @@
     # vim
     ~/.vim:
 
+    # nvim
+    ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.local/share/nvim/site/autoload/plug.vim: nvim/autoload/vim-plug/plug.vim
+
     # zsh
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
