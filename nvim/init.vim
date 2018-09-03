@@ -18,9 +18,15 @@ Plug 'morhetz/gruvbox'
 
 " Editor Features
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'w0rp/ale'
-Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
+
+Plug 'Shougo/neosnippet'                       " Snippets
+Plug 'Shougo/neosnippet-snippets'              " Default snippets for many languages
+
+Plug 'w0rp/ale'                                " Syntax Highlight
+Plug 'tpope/vim-commentary'                    " uncomment stuff
+Plug 'jiangmiao/auto-pairs'                    " Add closing brackets
+
+Plug 'ctrlpvim/ctrlp.vim'                      " CtrlP is installed to support tag finding in vim-go
 
 " Language Support
 Plug 'fatih/vim-go'                            " Go support
@@ -36,6 +42,7 @@ call plug#end()
 " General settings
 "----------------------------------------------
 set encoding=utf-8
+set termguicolors
 set noswapfile                    " disable swapfile usage
 set title                         " let vim set the terminal title
 
@@ -182,12 +189,37 @@ let g:ale_sign_warning = '⚠'
 let g:airline#extensions#ale#enabled = 1
 
 "----------------------------------------------
+" Plugin: 'ctrlpvim/ctrlp.vim'
+"----------------------------------------------
+" Note: We are not using CtrlP much in this configuration. But vim-go depend on
+" it to run GoDecls(Dir).
+
+" Disable the CtrlP mapping, since we want to use FZF instead for <c-p>.
+let g:ctrlp_map = ''
+
+"----------------------------------------------
+" Plugin: Shougo/neosnippet
+"----------------------------------------------
+
+" Keybindings
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+"----------------------------------------------
 " Language: Golang
 "----------------------------------------------
 au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
+
+" Mappings
+au FileType go nmap <leader>gd :GoDeclsDir<cr>                  " functions within the package
+au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)        " go to test
+au Filetype go nmap <leader>gah <Plug>(go-alternate-split)      " split - to test
+au Filetype go nmap <leader>gaw <Plug>(go-alternate-vertical)   " split | to test
+au FileType go nmap <F12> <Plug>(go-def)                        " go to definition
 
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
