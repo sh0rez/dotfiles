@@ -1,4 +1,8 @@
 # remove common-alias rm -i
 unalias rm
 
+# vim
+alias vi="nvim"
+alias vim="nvim"
+
 alias less="less -FX"

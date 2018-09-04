@@ -1,6 +1,10 @@
 # Lazy loading
 source ~/.zshlazy
 
+# Editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 # Golang
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
