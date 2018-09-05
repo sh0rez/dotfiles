@@ -93,8 +93,8 @@ if has('nvim')
     " install the neovim package for these binaries separately like this for
     " example:
     " pip3.6 install -U neovim
-    let g:python_host_prog = '/usr/bin/python2'
-    let g:python3_host_prog = '/usr/bin/python3'
+    " let g:python_host_prog = '/usr/bin/python2'
+    " let g:python3_host_prog = '/usr/bin/python3'
 endif
 
 "----------------------------------------------
@@ -215,11 +215,11 @@ au FileType go set softtabstop=4
 au FileType go set tabstop=4
 
 " Mappings
-au FileType go nmap <leader>gd :GoDeclsDir<cr>                  " functions within the package
-au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)        " go to test
-au Filetype go nmap <leader>gah <Plug>(go-alternate-split)      " split - to test
-au Filetype go nmap <leader>gaw <Plug>(go-alternate-vertical)   " split | to test
-au FileType go nmap <F12> <Plug>(go-def)                        " go to definition
+au FileType go nmap <leader>gd :GoDeclsDir<cr>
+au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
+au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
+au Filetype go nmap <leader>gaw <Plug>(go-alternate-vertical)
+au FileType go nmap <F12> <Plug>(go-def)
 
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
