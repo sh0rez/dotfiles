@@ -59,6 +59,7 @@ set ruler
 set showcmd                       " show command in bottom bar
 set cursorline                    " highlight current line
 set colorcolumn=81                " highlight the 80th column as an indicator
+set completeopt-=preview          " remove the horrendous preview window
 
 " tabs
 set autoindent                    " take indent for new line from previous line
@@ -105,7 +106,7 @@ let mapleader = ","	"leader
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
-nnoremap <right> <nop>
+noremap <right> <nop>
 " inoremap <up> <nop>
 " inoremap <down> <nop>
 " inoremap <left> <nop>
@@ -113,6 +114,11 @@ nnoremap <right> <nop>
 
 nnoremap j gj
 nnoremap k gk
+
+"----------------------------------------------
+" Bindings
+"----------------------------------------------
+nnoremap <leader>s :w<cr>
 
 "----------------------------------------------
 " Colors
@@ -215,11 +221,12 @@ au FileType go set softtabstop=4
 au FileType go set tabstop=4
 
 " Mappings
-au FileType go nmap <leader>gd :GoDeclsDir<cr>
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
+au FileType go nmap <leader>gf :GoFmt<cr>
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
 au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
 au Filetype go nmap <leader>gaw <Plug>(go-alternate-vertical)
-au FileType go nmap <F12> <Plug>(go-def)
+au FileType go nmap <leader>gd <Plug>(go-def)
 
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
