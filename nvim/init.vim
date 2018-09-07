@@ -119,6 +119,9 @@ nnoremap k gk
 " Bindings
 "----------------------------------------------
 nnoremap <leader>s :w<cr>
+nnoremap <leader>q :q<cr>
+
+nnoremap <leader>x :bd<cr>
 
 "----------------------------------------------
 " Colors
