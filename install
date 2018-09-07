@@ -13,3 +13,21 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+case `uname` in
+  Darwin)
+    # commands for OS X go here
+    echo "Setting up pinenter .."
+    if [[ ! -a /usr/local/bin/pinenter ]]; then
+        sudo ln -s /usr/local/bin/pinentry-mac /usr/local/bin/pinenter
+    fi
+  ;;
+  Linux)
+    # commands for Linux go here
+    echo "Setting up pinenter .."
+    if [[ ! -a /usr/local/bin/pinenter ]]; then
+        sudo ln -s /usr/bin/pinentry-gnome3 /usr/local/bin/pinenter
+    fi
+
+  ;;
+  esac
