@@ -215,6 +215,14 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
+" Disable snippets languages with self-made snippet configs
+let g:neosnippet#disable_runtime_snippets = {
+    \ 'go': 1
+\}
+
+" Set the path to our snippets
+let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
+
 "----------------------------------------------
 " Language: Golang
 "----------------------------------------------
@@ -230,6 +238,7 @@ au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
 au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
 au Filetype go nmap <leader>gaw <Plug>(go-alternate-vertical)
 au FileType go nmap <leader>gd <Plug>(go-def)
+au FileType go nmap <leader>gb :GoBuild<cr>
 
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
