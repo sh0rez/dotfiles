@@ -240,6 +240,10 @@ au Filetype go nmap <leader>gaw <Plug>(go-alternate-vertical)
 au FileType go nmap <leader>gd <Plug>(go-def)
 au FileType go nmap <leader>gb :GoBuild<cr>
 
+" Folding
+set foldmethod=syntax
+set foldlevelstart=20
+
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
 
