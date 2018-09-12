@@ -28,6 +28,9 @@ Plug 'jiangmiao/auto-pairs'                    " Add closing brackets
 
 Plug 'ctrlpvim/ctrlp.vim'                      " CtrlP is installed to support tag finding in vim-go
 
+
+Plug 'airblade/vim-gitgutter'
+
 " Language Support
 Plug 'fatih/vim-go'                            " Go support
 Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
