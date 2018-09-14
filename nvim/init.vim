@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " Integrations
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 
 " Appearance
 Plug 'vim-airline/vim-airline'
@@ -36,6 +37,7 @@ Plug 'fatih/vim-go'                            " Go support
 Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 Plug 'zchee/deoplete-jedi'                     " Go auto completion
 Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'benmills/vimux-golang'
 
 Plug 'hashivim/vim-terraform'                  " Hashicorp Config Lang
 
@@ -227,6 +229,18 @@ let g:neosnippet#disable_runtime_snippets = {
 let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 "----------------------------------------------
+" Plugin: benmills/vimux
+"----------------------------------------------
+let g:VimuxOrientation = "h"
+let g:VimuxHeight = "30"
+
+"----------------------------------------------
+" Plugin: benmills/vimux-golang
+"----------------------------------------------
+au Filetype go map <Leader>gtp :wa<CR> :GolangTestCurrentPackage<CR>
+au Filetype go map <Leader>gtf :wa<CR> :GolangTestFocused<CR>
+
+"----------------------------------------------
 " Language: Golang
 "----------------------------------------------
 au FileType go set noexpandtab
@@ -235,7 +249,7 @@ au FileType go set softtabstop=4
 au FileType go set tabstop=4
 
 " Mappings
-au FileType go nmap <leader>gt :GoDeclsDir<cr>
+" au FileType go nmap <leader>gt :GoDeclsDir<cr>
 au FileType go nmap <leader>gf :GoFmt<cr>
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
 au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
