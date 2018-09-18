@@ -10,5 +10,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
 export GOPATH=~/go
 
+# Python
+export PATH=$PATH:$HOME/.local/bin
+
 # User Bin
 export PATH=$PATH:~/bin
