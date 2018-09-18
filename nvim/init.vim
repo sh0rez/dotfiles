@@ -66,6 +66,10 @@ set cursorline                    " highlight current line
 set colorcolumn=81                " highlight the 80th column as an indicator
 set completeopt-=preview          " remove the horrendous preview window
 
+" folding
+set foldmethod=syntax
+set foldlevelstart=20
+
 " tabs
 set autoindent                    " take indent for new line from previous line
 set smartindent                   " enable smart indentation
@@ -257,9 +261,7 @@ au Filetype go nmap <leader>gaw <Plug>(go-alternate-vertical)
 au FileType go nmap <leader>gd <Plug>(go-def)
 au FileType go nmap <leader>gb :GoBuild<cr>
 
-" Folding
-set foldmethod=syntax
-set foldlevelstart=20
+let g:go_fmt_experimental = 1
 
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
