@@ -152,7 +152,7 @@ set ignorecase		                " case insensitive
 set smartcase		                " uppercase is case sensitive
 set showmatch		                " show matches
 
-nnoremap <leader><space> :noh<cr>   " clear results
+nnoremap <leader><space> :noh<cr>
 
 "----------------------------------------------
 " Splits + Tabs
