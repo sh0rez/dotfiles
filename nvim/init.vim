@@ -39,6 +39,9 @@ Plug 'zchee/deoplete-jedi'                     " Go auto completion
 Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'benmills/vimux-golang'
 
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 Plug 'hashivim/vim-terraform'                  " Hashicorp Config Lang
 
 call plug#end()
@@ -243,6 +246,13 @@ let g:VimuxHeight = "30"
 "----------------------------------------------
 au Filetype go map <Leader>gtp :wa<CR> :GolangTestCurrentPackage<CR>
 au Filetype go map <Leader>gtf :wa<CR> :GolangTestFocused<CR>
+au FileType go map <Leader>gr :wa<CR> :GolangRun<CR>
+
+"----------------------------------------------
+" Plugin: plasticboy/vim-markdown"
+" ----------------------------------------------
+let g:vim_markdown_math = 1
+au FileType markdown set cole=2
 
 "----------------------------------------------
 " Language: Golang
