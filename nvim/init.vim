@@ -26,9 +26,9 @@ Plug 'Shougo/neosnippet-snippets'              " Default snippets for many langu
 Plug 'w0rp/ale'                                " Syntax Highlight
 Plug 'tpope/vim-commentary'                    " uncomment stuff
 Plug 'jiangmiao/auto-pairs'                    " Add closing brackets
+Plug 'tpope/vim-surround'                      " Modify surroundings
 
 Plug 'ctrlpvim/ctrlp.vim'                      " CtrlP is installed to support tag finding in vim-go
-
 
 Plug 'airblade/vim-gitgutter'
 
