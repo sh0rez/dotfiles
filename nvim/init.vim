@@ -85,7 +85,15 @@ set autoread                      " reload file if the file changes on the disk
 set autowrite                     " write when switching buffers
 set autowriteall                  " write on :quit
 autocmd BufLeave * silent! :wa    " Autosave buffers before leaving them
-autocmd BufWritePre * :%s/\s\+$//e " Remove trailing white spaces on save
+
+fun! StripTrailingWhitespace()
+    " Only strip if the b:noStripeWhitespace variable isn't set
+    if exists('b:noStripWhitespace')
+        return
+    endif
+    %s/\s\+$//e
+endfun
+autocmd BufWritePre * call StripTrailingWhitespace()
 
 " (disable) features
 set clipboard=unnamedplus
@@ -358,6 +366,8 @@ au FileType markdown set shiftwidth=4
 au FileType markdown set softtabstop=4
 au FileType markdown set tabstop=4
 au FileType markdown set syntax=markdown
+
+au FileType markdown let b:noStripWhitespace=1
 
 "----------------------------------------------
 " Language: TOML
