@@ -5,6 +5,9 @@
 - clean: ['~']
 
 - link:
+    # emacs
+    /usr/local/bin/em: emacs/em.zsh
+    ~/.spacemacs: emacs/spacemacs
 
     # git
     ~/.gitconfig: git/gitconfig
