@@ -485,6 +485,9 @@ before packages are loaded."
 
     ;; disable lockfiles
     (setq create-lockfiles nil)
+
+    ;; display time
+    (spacemacs/toggle-display-time-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
