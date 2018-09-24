@@ -488,6 +488,9 @@ before packages are loaded."
 
     ;; display time
     (spacemacs/toggle-display-time-on)
+
+    ;; markdown orgtbl
+    (add-hook 'markdown-mode-hook 'turn-on-orgtbl)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
