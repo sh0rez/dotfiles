@@ -262,6 +262,9 @@ au FileType go map <Leader>gr :wa<CR> :GolangRun<CR>
 let g:vim_markdown_math = 1
 au FileType markdown set cole=2
 
+au FileType markdown map <Leader>sld :set spelllang=de<CR>
+au FileType markdown map <Leader>sle :set spelllang=en<CR>
+
 "----------------------------------------------
 " Language: Golang
 "----------------------------------------------

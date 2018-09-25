@@ -1,2 +1,5 @@
 # IntelliJ, Goland, etc.
 .idea
+
+# macOS
+.DS_Store
