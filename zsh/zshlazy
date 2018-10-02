@@ -1,4 +1,4 @@
-# Stolen from https://gist.github.com/QinMing/364774610afc0e06cc223b467abe83c0 
+# Stolen from https://gist.github.com/QinMing/364774610afc0e06cc223b467abe83c0
 lazy_load() {
     # Act as a stub to another shell function/command. When first run, it will load the actual function/command then execute it.
     # E.g. This made my zsh load 0.8 seconds faster by loading `nvm` when "nvm", "npm" or "node" is used for the first time
@@ -13,11 +13,11 @@ lazy_load() {
         names=("${(@s: :)${1}}")
     else
         names=($1)
-    fi  
+    fi
     unalias "${names[@]}"
     . $2
     shift 2
-    $*  
+    $*
 }
 
 group_lazy_load() {
@@ -31,10 +31,13 @@ group_lazy_load() {
 
 # Node
 export NVM_DIR=~/.nvm
-group_lazy_load $HOME/.nvm/nvm.sh nvm node npm npx 
+group_lazy_load $HOME/.nvm/nvm.sh nvm node npm npx
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 group_lazy_load $HOME/.rvm/scripts/rvm rvm irb rake rails
+
+# Pharos
+group_lazy_load /usr/local/opt/chpharos/share/chpharos/chpharos.sh chpharos pharos
 
 # TheFuck
 fuck() {
