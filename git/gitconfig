@@ -23,3 +23,5 @@
 	protocol = git
 [core]
 	excludesfile = /Users/tbraack/.gitignore
+[github]
+	user = sh0rez
