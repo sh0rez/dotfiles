@@ -40,7 +40,10 @@ group_lazy_load $HOME/.rvm/scripts/rvm rvm irb rake rails
 group_lazy_load /usr/local/opt/chpharos/share/chpharos/chpharos.sh chpharos pharos
 
 # kubectl
-group_lazy_load $HOME/.dotfiles/zsh/kubectl.zsh kubectl
+group_lazy_load $HOME/.dotfiles/zsh/lazy/kubectl.zsh kubectl
+
+# helm
+group_lazy_load $HOME/.dotfiles/zsh/lazy/helm.zsh helm
 
 # TheFuck
 fuck() {
