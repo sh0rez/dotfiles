@@ -10,6 +10,9 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
 export GOPATH=~/go
 
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
+
 # Python
 export PATH=$PATH:$HOME/.local/bin
 
