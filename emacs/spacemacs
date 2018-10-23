@@ -75,6 +75,7 @@ This function should only modify configuration layer settings."
      yaml
 
      (shell :variables
+             shell-default-shell 'eshell
              shell-default-height 30
              shell-default-position 'bottom)
 
@@ -511,6 +512,9 @@ before packages are loaded."
 
     ;; golangci
     (setq flycheck-golangci-lint-config "/home/tbraack/.golangci.yml")
+
+    ;; eshell case insensitive
+    (setq eshell-cmpl-ignore-case t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
