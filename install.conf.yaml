@@ -16,6 +16,9 @@
     # input
     ~/.inputrc: input/inputrc
 
+    # golangci
+    ~/.golangci.yml:
+
     # gpg
     ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
 

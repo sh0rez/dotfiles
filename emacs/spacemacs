@@ -508,6 +508,9 @@ before packages are loaded."
       :config
       (magithub-feature-autoinject t)
       (setq magithub-clone-default-directory "~/work"))
+
+    ;; golangci
+    (setq flycheck-golangci-lint-config "/home/tbraack/.golangci.yml")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
