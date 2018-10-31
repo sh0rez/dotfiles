@@ -94,7 +94,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(magithub)
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -506,13 +506,6 @@ before packages are loaded."
 
     ;; markdown orgtbl
     (add-hook 'markdown-mode-hook 'turn-on-orgtbl)
-
-    ;; magithub
-    (use-package magithub
-      :after magit
-      :config
-      (magithub-feature-autoinject t)
-      (setq magithub-clone-default-directory "~/work"))
 
     ;; golangci
     (setq flycheck-golangci-lint-config "/home/tbraack/.golangci.yml")
