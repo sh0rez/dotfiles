@@ -1,5 +1,14 @@
 linters:
-  enable-all: true
-  fast: true
-  disable:
-    - lll
+  disable-all: true
+  enable:
+    - govet
+    - errcheck
+    - golint
+    - ineffassign
+    - dupl
+    - goconst
+    - gocyclo
+    - typecheck
+    - gofmt
+    - misspell
+    - prealloc
