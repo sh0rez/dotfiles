@@ -27,6 +27,8 @@
     ~/.tmux.linux.conf: tmux/tmux.linux.conf
     ~/.tmux.darwin.conf: tmux/tmux.darwin.conf
 
+    # ideavim
+    ~/.ideavimrc:
     # vim
     ~/.vim:
 
