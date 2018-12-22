@@ -21,3 +21,6 @@ export PATH=$PATH:~/bin
 
 # Make Ansible serious
 export ANSIBLE_NOCOWS=1
+
+# kubectl
+export KUBECONFIG=~/.kube/config.prod:~/.kube/config.minikube
