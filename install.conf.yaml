@@ -33,8 +33,12 @@
     ~/.vim:
 
     # nvim
-    ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.local/share/nvim/site/autoload/plug.vim: nvim/autoload/vim-plug/plug.vim
+    ~/.config/nvim/init.vim:
+            path: nvim/init.vim
+            create: true
+    ~/.local/share/nvim/site/autoload/plug.vim:
+            path: nvim/autoload/vim-plug/plug.vim
+            create: true
     ~/.config/nvim/snippets: nvim/snippets
 
     # zsh
