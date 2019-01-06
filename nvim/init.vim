@@ -44,6 +44,8 @@ Plug 'plasticboy/vim-markdown'
 
 Plug 'hashivim/vim-terraform'                  " Hashicorp Config Lang
 
+Plug 'google/vim-jsonnet'                      " jsonnet
+
 call plug#end()
 
 "----------------------------------------------
