@@ -32,9 +32,6 @@ group_lazy_load() {
 # Pharos
 group_lazy_load /usr/local/opt/chpharos/share/chpharos/chpharos.sh chpharos pharos
 
-# kubectl
-group_lazy_load $HOME/.dotfiles/zsh/lazy/kubectl.zsh kubectl
-
 # helm
 group_lazy_load $HOME/.dotfiles/zsh/lazy/helm.zsh helm
 

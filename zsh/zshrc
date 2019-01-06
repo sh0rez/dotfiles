@@ -18,6 +18,7 @@ antigen bundles <<EOBUNDLES
     golang
     git
     tmux
+    vault
 EOBUNDLES
 
 # further plugins
@@ -35,3 +36,6 @@ antigen apply
 
 # Aliases
 source ~/.zshalias
+
+# Completions
+fpath=( ~/.dotfiles/zsh/complete "${fpath[@]}" )
