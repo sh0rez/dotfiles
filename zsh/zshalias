@@ -6,3 +6,6 @@ alias vi="nvim"
 alias vim="nvim"
 
 alias less="less -FX"
+
+# (go)pass
+alias pass="gopass"
