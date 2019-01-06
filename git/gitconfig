@@ -1,6 +1,6 @@
 [user]
 	email = me@shorez.de
-	name = shorez
+	name = sh0rez
 	signingkey = 29FB032E2243AA14
 [filter "lfs"]
 	clean = git-lfs clean -- %f
