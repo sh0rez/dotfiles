@@ -67,6 +67,7 @@ nmap <leader>al      :actionlist<CR>
 nmap <leader>bb      :action RecentFiles<CR>
 nmap <leader>/i      :action ActivateStructureToolWindow<CR>
 nmap <leader>bu      :action ReopenClosedTab<CR>
+nmap <leader>bd      :action CloseEditor
 nmap <leader>cc      :action GotoClass<CR>
 nmap <leader>dD      :action DebugClass<CR>
 nmap <leader>dd      :action Debug<CR>
@@ -101,6 +102,7 @@ vmap <leader>al      :<Backspace><Backspace><Backspace><Backspace><Backspace>act
 vmap <leader>bb      :<Backspace><Backspace><Backspace><Backspace><Backspace>action RecentFiles<CR>
 vmap <leader>/i      :<Backspace><Backspace><Backspace><Backspace><Backspace>action ActivateStructureToolWindow<CR>
 vmap <leader>bu      :<Backspace><Backspace><Backspace><Backspace><Backspace>action ReopenClosedTab<CR>
+vmap <leader>bd      :<Backspace><Backspace><Backspace><Backspace><Backspace>action CloseEditor<CR>
 vmap <leader>cc      :<Backspace><Backspace><Backspace><Backspace><Backspace>action GotoClass<CR>
 vmap <leader>dD      :<Backspace><Backspace><Backspace><Backspace><Backspace>action DebugClass<CR>
 vmap <leader>dd      :<Backspace><Backspace><Backspace><Backspace><Backspace>action Debug<CR>
