@@ -556,6 +556,8 @@ before packages are loaded."
     (setq mouse-wheel-scroll-amount '(3 ((shift) . 1))) ;; two lines at a time
     (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
     (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+    ;; TRAMP
+    (setq projectile-mode-line "Projectile")
   )
 
 (defun dotspacemacs/emacs-custom-settings ()
