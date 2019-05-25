@@ -10,6 +10,9 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
 export GOPATH=~/go
 
+# Docker
+export DOCKER_BUILDKIT=1
+
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
 
