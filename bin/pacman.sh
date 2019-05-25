@@ -8,7 +8,7 @@ function eat {
 }
 
 function ghost {
-        ssh -L 1194:braack.cloud:1194 circular ./cow
+        ssh -L 1194:access.braack.cloud:1194 circular ./cow
 }
 
 case "$1" in
