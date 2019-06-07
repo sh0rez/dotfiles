@@ -8,9 +8,10 @@
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'ctjhoa/spacevim'
+
 " Integrations
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
 
 " Appearance
 Plug 'vim-airline/vim-airline'
@@ -19,9 +20,6 @@ Plug 'morhetz/gruvbox'
 
 " Editor Features
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-Plug 'Shougo/neosnippet'                       " Snippets
-Plug 'Shougo/neosnippet-snippets'              " Default snippets for many languages
 
 Plug 'w0rp/ale'                                " Syntax Highlight
 Plug 'tpope/vim-commentary'                    " uncomment stuff
@@ -35,9 +33,6 @@ Plug 'airblade/vim-gitgutter'
 " Language Support
 Plug 'fatih/vim-go'                            " Go support
 Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
-Plug 'zchee/deoplete-jedi'                     " Go auto completion
-Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'benmills/vimux-golang'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -103,47 +98,23 @@ set clipboard=unnamedplus
 set noerrorbells                  " No bells!
 set novisualbell                  " I said, no bells!
 
-"set wildmenu                      " visual autocomplete for command menu
-
 " mouse support
 if has('mouse')
     set mouse=a
 endif
 
-" neovim specific settings
-if has('nvim')
-    " Set the Python binaries neovim is using. Please note that you will need to
-    " install the neovim package for these binaries separately like this for
-    " example:
-    " pip3.6 install -U neovim
-    " let g:python_host_prog = '/usr/bin/python2'
-    " let g:python3_host_prog = '/usr/bin/python3'
-endif
-
 "----------------------------------------------
 " Navigation
 "----------------------------------------------
-let mapleader = ","	"leader
+let mapleader = ' '	"leader
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 noremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
 
 nnoremap j gj
 nnoremap k gk
-
-"----------------------------------------------
-" Bindings
-"----------------------------------------------
-nnoremap <leader>s :w<cr>
-nnoremap <leader>q :q<cr>
-
-nnoremap <leader>x :bd<cr>
 
 "----------------------------------------------
 " Colors
@@ -162,33 +133,17 @@ set ignorecase		                " case insensitive
 set smartcase		                " uppercase is case sensitive
 set showmatch		                " show matches
 
-nnoremap <leader><space> :noh<cr>
-
-"----------------------------------------------
-" Splits + Tabs
-"----------------------------------------------
-" Splits
-nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <leader>W :vsp .<cr>
-
-nnoremap <leader>h <C-w>s<C-w>j
-nnoremap <leader>H :sp .<cr>
-
-nnoremap <leader>= <C-w>=
-
 set splitbelow
 set splitright
-
-" Tabs
-nnoremap <leader>C :tabnew .<cr>
-nnoremap <leader>c :tabnew <cr>
-nnoremap <leader>& :tabclose<cr>
 
 " Movement
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+inoremap fd <ESC>
+set timeoutlen=100
 
 "----------------------------------------------
 " Plugin: Shougo/deoplete.nvim
@@ -228,37 +183,6 @@ let g:airline#extensions#ale#enabled = 1
 " Disable the CtrlP mapping, since we want to use FZF instead for <c-p>.
 let g:ctrlp_map = ''
 
-"----------------------------------------------
-" Plugin: Shougo/neosnippet
-"----------------------------------------------
-
-" Keybindings
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-" Disable snippets languages with self-made snippet configs
-let g:neosnippet#disable_runtime_snippets = {
-    \ 'go': 1
-\}
-
-" Set the path to our snippets
-let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
-
-"----------------------------------------------
-" Plugin: benmills/vimux
-"----------------------------------------------
-let g:VimuxOrientation = "h"
-let g:VimuxHeight = "30"
-
-"----------------------------------------------
-" Plugin: benmills/vimux-golang
-"----------------------------------------------
-au Filetype go map <Leader>gtp :wa<CR> :GolangTestCurrentPackage<CR>
-au Filetype go map <Leader>gtf :wa<CR> :GolangTestFocused<CR>
-au FileType go map <Leader>gr :wa<CR> :GolangRun<CR>
-
-"----------------------------------------------
 " Plugin: plasticboy/vim-markdown"
 " ----------------------------------------------
 let g:vim_markdown_math = 1
@@ -274,15 +198,6 @@ au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
-
-" Mappings
-" au FileType go nmap <leader>gt :GoDeclsDir<cr>
-au FileType go nmap <leader>gf :GoFmt<cr>
-au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
-au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
-au Filetype go nmap <leader>gaw <Plug>(go-alternate-vertical)
-au FileType go nmap <leader>gd <Plug>(go-def)
-au FileType go nmap <leader>gb :GoBuild<cr>
 
 let g:go_fmt_experimental = 1
 
@@ -310,9 +225,6 @@ let g:go_auto_sameids = 1
 
 " Fix for location list when vim-go is used together with Syntastic
 let g:go_list_type = "quickfix"
-
-" Add the failing test name to the output of :GoTest
-let g:go_test_show_name = 1
 
 " gometalinter configuration
 let g:go_metalinter_command = ""
@@ -347,20 +259,29 @@ au FileType gitconfig set softtabstop=2
 au FileType gitconfig set tabstop=2
 
 "----------------------------------------------
-" Language: JavaScript
-"----------------------------------------------
-au FileType javascript set expandtab
-au FileType javascript set shiftwidth=2
-au FileType javascript set softtabstop=2
-au FileType javascript set tabstop=2
-
-"----------------------------------------------
 " Language: JSON
 "----------------------------------------------
 au FileType json set expandtab
 au FileType json set shiftwidth=2
 au FileType json set softtabstop=2
 au FileType json set tabstop=2
+
+"----------------------------------------------
+" Language: YAML
+"----------------------------------------------
+au FileType yaml set expandtab
+au FileType yaml set shiftwidth=2
+au FileType yaml set softtabstop=2
+au FileType yaml set tabstop=2
+
+
+"----------------------------------------------
+" Language: TOML
+"----------------------------------------------
+au FileType toml set expandtab
+au FileType toml set shiftwidth=2
+au FileType toml set softtabstop=2
+au FileType toml set tabstop=2
 
 "----------------------------------------------
 " Language: Markdown
@@ -373,19 +294,3 @@ au FileType markdown set tabstop=4
 au FileType markdown set syntax=markdown
 
 au FileType markdown let b:noStripWhitespace=1
-
-"----------------------------------------------
-" Language: TOML
-"----------------------------------------------
-au FileType toml set expandtab
-au FileType toml set shiftwidth=2
-au FileType toml set softtabstop=2
-au FileType toml set tabstop=2
-
-"----------------------------------------------
-" Language: YAML
-"----------------------------------------------
-au FileType yaml set expandtab
-au FileType yaml set shiftwidth=2
-au FileType yaml set softtabstop=2
-au FileType yaml set tabstop=2
