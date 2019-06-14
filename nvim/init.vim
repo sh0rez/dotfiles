@@ -32,7 +32,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Language Support
 Plug 'fatih/vim-go'                            " Go support
-Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -143,7 +142,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 inoremap fd <ESC>
-set timeoutlen=100
+ set timeoutlen=300
 
 "----------------------------------------------
 " Plugin: Shougo/deoplete.nvim
@@ -151,6 +150,7 @@ set timeoutlen=100
 if has('nvim')
     " Enable deoplete on startup
     let g:deoplete#enable_at_startup = 1
+    call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 endif
 
 "----------------------------------------------
@@ -158,12 +158,6 @@ endif
 "----------------------------------------------
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-"----------------------------------------------
-" Plugin: zchee/deoplete-go
-"----------------------------------------------
-" Enable completing of go pointers
-let g:deoplete#sources#go#pointer = 1
 
 "----------------------------------------------
 " Plugin: w0rp/ale
@@ -198,6 +192,9 @@ au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
+
+let g:go_info_mode='gopls'
+let g:go_def_mode='gopls'
 
 let g:go_fmt_experimental = 1
 
